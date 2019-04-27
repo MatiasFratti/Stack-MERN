@@ -1,0 +1,21 @@
+{
+  "name": "Stack_Mearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "mongoose": "^5.5.4",
+    "webpack": "^4.30.0"
+  }
+}
