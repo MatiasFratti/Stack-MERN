@@ -1,10 +1,17 @@
 import React,{Component} from 'react';
 import {render} from 'react-dom';
+import Nav from './componentes/Nav';
+import Task from './componentes/Task';
+
 
 class App extends Component{
     render(){
         return(
-            <h1>Hello word</h1>
+            <div>
+                <Nav />
+                <Task />
+            </div>
+            
         );
     }
 }

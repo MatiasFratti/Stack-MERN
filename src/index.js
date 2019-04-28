@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 3080);
 // middlewares
 app.use(express.json());
 // routes
-app.use('/api/users',routes);
+app.use('/api/tasks',routes);
 // static files
 app.use(express.static(path.join(__dirname,'public')));
 // server init
