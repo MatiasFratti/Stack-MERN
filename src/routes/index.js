@@ -18,11 +18,11 @@ router.post('/',async(req,res)=>{
     await task.save(function(err){
         if(err) console.log('no se pudieron guardar los datos');
         else{
-            console.log('datos guardados');
+            res.json({status:'datos guardados'});
         }
     });
     console.log(task);
-    res.json({status:'datos guardados'});
+    
 
 });
 router.get('/:id',async (req,res)=>{
@@ -40,7 +40,9 @@ router.put('/:id',async(req,res)=>{
     res.json('actualizado');
 });
 router.delete('/:id',async(req,res)=>{
-    await Task.findOneAndDelete(req.params.id);
+    console.log(req.params.id);
+    const task = await Task.findOneAndRemove({_id:req.params.id});
     res.json('Delete');
+    console.log(task);
 });
 module.exports = router;

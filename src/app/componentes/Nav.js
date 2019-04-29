@@ -8,7 +8,7 @@ class Nav extends Component{
                     <div className="nav-wrapper">
                         <a href="#" className="brand-logo"><img id="logo" src="/images/logo_tareas.png"/></a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a href="sass.html">Inicio</a></li>
+                            <li><a className="inicio" href="sass.html">Inicio</a></li>
                             {/* <li><a href="badges.html">Components</a></li>
                             <li><a href="collapsible.html">JavaScript</a></li> */}
                         </ul>

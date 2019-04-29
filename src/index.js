@@ -14,6 +14,7 @@ app.set('port', process.env.PORT || 3080);
 app.use(express.json());
 // routes
 app.use('/api/tasks',routes);
+
 // static files
 app.use(express.static(path.join(__dirname,'public')));
 // server init
