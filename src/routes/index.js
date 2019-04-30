@@ -3,9 +3,35 @@ const router = express.Router();
 
 const User = require('../model/users');
 const Task = require('../model/Task');
+const State = require('../model/State');
 
+router.post('/validation',async(req,res)=>{
+    new User();
+    console.log(req.body.name,'  ',req.body.pass);
+    const user = await User.find(function(err,usu){
+        
+    });
+    console.log(user[0].name,'  ',user[0].pass)
+    if(user[0].name==req.body.name && user[0].pass == req.body.pass){
+        console.log('enter');
+        res.json(user);
+    }
+    else{
+        console.log('afuera')
+        res.json('error');
+    }
+
+});
+
+router.get('/state',async(req,res)=>{
+    new State();
+    const state = await State.find();
+    console.log(state);
+    res.json(state);
+});
 
 router.get('/', async(req,res)=>{
+   
     new Task()
     const task = await Task.find(function(err,user){
         

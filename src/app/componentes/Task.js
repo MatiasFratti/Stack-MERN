@@ -9,7 +9,8 @@ class Task extends Component{
             title:'',
             description:'',
             task:[],
-            _id:''
+            _id:'',
+            _state:true
         }
         this.handelChange = this.handelChange.bind(this);
         this.addTask = this.addTask.bind(this);
@@ -22,8 +23,25 @@ class Task extends Component{
            [name]: value
         });
     }
+    getState(){
+        fetch('/api/tasks/state')
+        .then(res=>res.json())
+        .then(data=>{
+            this.setState({_state:data});
+            console.log(this.state._state);
+            
+
+        })
+        .catch(err=>alert(err));
+    }
     componentDidMount(){
         this.fetchTask();
+        this.getState();      
+        if(this.state._state==true){
+            document.getElementById('contain').className= 'container_none';
+        }
+        
+       
 
     }
     componentDidUpdate(){
@@ -49,7 +67,7 @@ class Task extends Component{
         .then(data=>{
             this.setState({task:data});
             console.log(this.state.task);
-            
+            this.getState(); 
 
         })
         .catch(err=>alert(err));
@@ -133,7 +151,8 @@ class Task extends Component{
 
     render(){
         return(
-            <div className="container">
+            <div id="contain" className="container">
+            <center><h2>Agrega o actualiza tus tareas</h2></center>
                 <div className="row">
                     <div className="col s4">
                         <div className="card">
